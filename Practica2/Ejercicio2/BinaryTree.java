@@ -119,8 +119,8 @@ public class BinaryTree <T> {
 	    cola.add(null);
 
 	    int nivelActual = 0;
-
-	    while (!cola.isEmpty()) {
+	    boolean sigue = true;
+	    while (!cola.isEmpty() && sigue) {
 	        BinaryTree<T> ab = cola.poll();
 
 	        if (ab != null) {
@@ -143,7 +143,7 @@ public class BinaryTree <T> {
 
 	            // Si hemos superado el nivel m, terminamos
 	            if (nivelActual > m) {
-	                break;
+	                sigue = false;
 	            }
 
 	            // Añadir marcador para el siguiente nivel si quedan nodos
